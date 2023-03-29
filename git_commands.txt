@@ -1,0 +1,16 @@
+git remote add origin https://github.com/IVReddy81/test.git  # to add origin (repo from github)
+git remote show origin #to show to repo you are connected
+git push -u origin main #pushing changes to main branch
+git checkout -b master #creating and moving to master branch
+cat >> a.txt #making some changes to file in master branch
+git status #to check status of git
+git add . #to add changes files to local dir
+git commit -m "correct data" #commiting the changes
+git push -u origin master #pushing the changes to git hub repository (master branch), it will create new branch automatically in repository
+git checkout main #moving to main branch
+git merge master #fixing the error and merge to main branch
+git push -u origin main # pushing latest changes (error fix) to main branch
+git push origin --delete master #our work is done so deleting master branch from github
+git branch # to check how many branches are there in local dir
+git branch -d master #to remove master branch from local dir
+
