@@ -14,3 +14,17 @@ git push origin --delete master #our work is done so deleting master branch from
 git branch # to check how many branches are there in local dir
 git branch -d master #to remove master branch from local dir
 
+git log --stat #to see more info reg commits
+git log -p #to see all git commads
+git config --global credential.helper cache #to store git credentials
+git show commit_id #to show info about that commit
+#to remove file from git but not local respository
+git rm filename
+git restore --staged filename #to restore file from staging, need to add it again
+git restore filename  #discard the changes in local directory
+
+git rm --cached filename #to restore file from staging, need to add it again
+git diff #to see what changed in staged and local files
+git diff filename #to see what changed in particular file in staged and local
+git commit -a -m "commit msg" #if there are files to commit, it will add and auto commit
+
