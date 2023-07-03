@@ -1,0 +1,60 @@
+git remote add origin https://github.com/IVReddy81/test.git  # to add origin (repo from github)
+git remote show origin #to show to repo you are connected
+git push -u origin main #pushing changes to main branch
+git checkout -b master #creating and moving to master branch
+cat >> a.txt #making some changes to file in master branch
+git status #to check status of git
+git add . #to add changes files to local dir
+git commit -m "correct data" #commiting the changes
+git push -u origin master #pushing the changes to git hub repository (master branch), it will create new branch automatically in repository
+git checkout main #moving to main branch
+git merge master #fixing the error and merge to main branch
+git push -u origin main # pushing latest changes (error fix) to main branch
+git push origin --delete master #our work is done so deleting master branch from github
+git branch # to check how many branches are there in local dir
+git branch -d master #to remove master branch from local dir
+
+git log --stat #to see more info reg commits
+git log -p #to see all git commads
+git config --global credential.helper cache #to store git credentials
+git show commit_id #to show info about that commit
+git rm filename #to remove file from git but not local respository
+git restore --staged filename #to restore file from staging, need to add it again
+git restore filename  #discard the changes in local directory
+
+git rm --cached filename #to restore file from staging, need to add it again
+git diff #to see what changed in staged and local files
+git diff filename #to see what changed in particular file in staged and local
+git commit -a -m "commit msg" #if there are files to commit, it will add and auto commit
+
+git config --global core.editor vi #set default editor as vi editor
+git config -l or --list #to see all the gut settings
+git config --global alias.co checkout #co=checkout ==>git co
+
+git init hello #create a new directory hello and initialize git repository
+git clone url #download git repository from github to local repository
+
+git show filename #to see content of file in commited git local repo
+git blame filename #display all the content of file when it modified or committed
+git branch name #create a branch as name but don't checkout
+git checkout name #checkout to name
+git checkout -b name #create a branch as name and checkout to it
+git branch -d name #delete a name branch from local repo
+git branch -m oldname newname #rename a branch from oldname to newname
+git push origin -delete branchname #delete remote branch'
+git checkout remotebranch #switch to remotebranch in git repo
+
+#stash: Switch branches without committing the current branch, we can add to one branch and commit to another branch
+git stash filename #staged filename wouldn't be committed, and won't be shown
+git stash show #stashed files will be shown here
+git stash pop #stashed file will moved from stash 
+git stash list #to check stored stashs
+git stash drop #delete most recent stash from queue
+git stash clear #delete all the stashes from queue
+git stash apply #reapply the changes that you just stashed
+git stash branch branchname #stash work on a seperate branch
+
+#by dafault git clone will download only default branch
+#to download all branches use
+for branch in `git branch -a | grep remotes | grep -v HEAD | grep -v master `; do git branch --track ${branch#remotes/origin/} $branch; done
+
