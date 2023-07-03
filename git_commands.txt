@@ -22,7 +22,7 @@ git rm filename #to remove file from git but not local respository
 git restore --staged filename #to restore file from staging, need to add it again
 git restore filename  #discard the changes in local directory
 
-git rm --cached filename #to restore file from staging, need to add it again
+git rm --cached filename #to restore file from staging, need to add it again, remove file from git but keeps in local repo
 git diff #to see what changed in staged and local files
 git diff filename #to see what changed in particular file in staged and local
 git commit -a -m "commit msg" #if there are files to commit, it will add and auto commit
@@ -43,6 +43,7 @@ git branch -d name #delete a name branch from local repo
 git branch -m oldname newname #rename a branch from oldname to newname
 git push origin -delete branchname #delete remote branch'
 git checkout remotebranch #switch to remotebranch in git repo
+git push origin --delete branchname #delete branch from remote repo
 
 #stash: Switch branches without committing the current branch, we can add to one branch and commit to another branch
 git stash filename #staged filename wouldn't be committed, and won't be shown
@@ -57,4 +58,21 @@ git stash branch branchname #stash work on a seperate branch
 #by dafault git clone will download only default branch
 #to download all branches use
 for branch in `git branch -a | grep remotes | grep -v HEAD | grep -v master `; do git branch --track ${branch#remotes/origin/} $branch; done
+
+git remote -v #provides fetch and push url
+
+git remote set-url origin githuburl #set particular branch as default url
+git remote add githuburl #to add github repo
+git fetch #fetch data from deafult branch
+git fetch --all #fetch data from all branches
+
+git revert #uncommit the last commit
+git revert commitid #uncommit the particualr commit
+git reset --hard commitid #removes all the commits after commitid
+git reset --soft commitid #removes all the commits after commitid, but all the commits files will be stages, so we can commit again
+git reset --mixed commitid #removes all the commits after commitid, and all the commits files will not be removed, so we can add and commit again.
+
+
+
+
 
