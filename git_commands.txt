@@ -72,6 +72,10 @@ git reset --hard commitid #removes all the commits after commitid
 git reset --soft commitid #removes all the commits after commitid, but all the commits files will be stages, so we can commit again
 git reset --mixed commitid #removes all the commits after commitid, and all the commits files will not be removed, so we can add and commit again.
 
+git remote add king url #king is now origin for that github repo, git remote add remote_name url
+git pull remote_name branch_name  #pulls all files from that branch from king remote github repo
+git push remote_name branch_name #push all files to specified branch in remote github repo
+*****we can add as many as remotes********
 
 
 
